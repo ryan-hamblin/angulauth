@@ -6,9 +6,10 @@
   </p>
   <form>
   <!-- Authenticate these states and only allow access after user is Authorized -->
-    <a href='#/twittview' class='btn btn-default fa fa-twitter text-tilt'>Twitter</a>
-    <a href='#/github' class='btn btn-default fa fa-twitter text-tilt'>GitHub</a>
-    <a href='#/fbview' class='btn btn-default fa fa-twitter text-tilt'>Facebook</a>
+   <!--  <div ng-controller='TwitterCtrl'><a href='#/twittview' class='btn btn-default fa fa-twitter' ng-click="authenticate('twitter')">Twitter</a></div> -->
+    <div name='loginForm'>
+    <div ng-controller='GithubCtrl'><a href='#/github' class='btn btn-default fa fa-github' ng-click="authenticate('github')">GitHub</a></div>
+   <!--  <div ng-controller='FbCtrl'><a href='#/fbview' class='btn btn-default fa fa-facebook'>Facebook</a></div> -->
   </form>
 </div>
 </div>

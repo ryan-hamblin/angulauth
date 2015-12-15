@@ -1,1 +1,11 @@
-<p>This is the gitHubView view.</p>
+<div ng-controller='GithubCtrl'>
+		<h1>{{ userData.name }} </h1>
+		<h3><a href="{{userData.html_url}}">{{ userData.login }}</a></h3>
+		<img src="{{userData.avatar_url}}"/>
+		<br>
+		<br>
+	<!-- 	<div ng-repeat='follower in followers'>
+		 <img src="{{ follower.avatar_url }}"/>
+		<h3><a href="{{follower.html_url}}">{{ follower.login }}</a></h3>
+		</div> -->
+</div>

@@ -16,12 +16,13 @@ angular.module('angulauthApp', [
     'ngResource',
     'ngSanitize',
     'ngTouch',
-    'ui.router'
+    'ui.router',
+    'satellizer'
   ])
 //this is my router. It actually uses UI-Router to provide state instead of routing. 
 //this is the common practice amongts NG-Devs. 
-.config(function($stateProvider, $urlRouterProvider){
-
+.config(function($stateProvider, $urlRouterProvider, $authProvider){
+ //routes and such
 	$urlRouterProvider.otherwise('/main');
 
 	$stateProvider
@@ -49,5 +50,34 @@ angular.module('angulauthApp', [
 			url: '/github',
 			templateUrl: 'views/githubview.html'
 		});
+
+
+		// auth stuff. 
+
+		$authProvider.oauth2({
+				name: 'github',
+				clientId: '',
+			  url: '/auth/github',
+  			authorizationEndpoint: 'https://github.com/login/oauth/authorize',
+  			redirectUri: window.location.origin,
+			  optionalUrlParams: ['scope'],
+			  scope: ['user:email'],
+			  scopeDelimiter: ' ',
+			  type: '2.0',
+			  popupOptions: { width: 1020, height: 618 }
+			});
+
+
+			// $authProvider.twitter({
+			// 	clientId: 'eDKf3suvrzsixugJsm0I9MOMc'
+			//   url: '/auth/twitter',
+			//   authorizationEndpoint: 'https://api.twitter.com/oauth/authenticate',
+			//   redirectUri: window.location.origin,
+			//   type: '1.0',
+			//   popupOptions: { width: 495, height: 645 }
+			// });
+
 		
 });
+
+
