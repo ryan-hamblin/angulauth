@@ -8,10 +8,12 @@
   <!-- Authenticate these states and only allow access after user is Authorized -->
    <!--  <div ng-controller='TwitterCtrl'><a href='#/twittview' class='btn btn-default fa fa-twitter' ng-click="authenticate('twitter')">Twitter</a></div> -->
     <div name='loginForm'>
-    <div ng-controller='GithubCtrl'><a href='#/github' class='btn btn-default fa fa-github' ng-click="authenticate('github')">GitHub</a></div>
-   <!--  <div ng-controller='FbCtrl'><a href='#/fbview' class='btn btn-default fa fa-facebook'>Facebook</a></div> -->
+    <input type='text' ng-model='username'/>
+    <div ng-controller='GithubCtrl'><a href='#/github' class='btn btn-default fa fa-github' ng-click="submit()">GitHub</a></div>
+  <!--   <div ng-controller='FbCtrl'><a href='#/fbview' class='btn btn-default fa fa-facebook'>Facebook</a></div> -->
   </form>
 </div>
 </div>
 
 
+<!--    -->

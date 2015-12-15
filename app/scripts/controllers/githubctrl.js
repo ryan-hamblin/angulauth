@@ -8,38 +8,18 @@
  * Controller of the angulauthApp
  */
 angular.module('angulauthApp')
-  .controller('GithubCtrl', function ($scope, $auth) {
- 		
- 		$scope.authenticate = function(provider){
- 			return $auth.authenticate(provider)
- 				.then(function(response, err){
- 				console.log('response: ', err);
- 		 })
- 				.catch(function(response){
- 					console.log('Error: ', response);
- 				});		
+  .controller('GithubCtrl', function ($scope, $auth, Github) {
+ 
+ 	  $scope.username;
 
- 	  };
-
-
-
+ 	  $scope.nest = Github.nest;
  	  
+ 	  $scope.followers = Github.followers;
 
- 		// $scope.username = '';
- 		// $http.get("https://api.github.com/users/" + $scope.username)
- 		// 	.success(function(data){
- 		// 		$scope.username = data.login;
-		 // 		$scope.userData = data;
-		 		
- 		// 		console.log('data: ', $scope.userData);
- 		// });
-
- 		// $http.get("https://api.github.com/users/" + $scope.username + '/followers')
- 		// 	.success(function(res){
- 		// 		$scope.followers = res;
- 		// 		console.log('followers, ', $scope.followers);
- 		// });
-
+ 		$scope.submit = function(){
+ 			Github.submit($scope.username);
+ 		};
+ 		
   });
 
 

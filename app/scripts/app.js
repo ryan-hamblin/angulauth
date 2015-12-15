@@ -51,33 +51,45 @@ angular.module('angulauthApp', [
 			templateUrl: 'views/githubview.html'
 		});
 
-
-		// auth stuff. 
-
-		$authProvider.oauth2({
-				name: 'github',
-				clientId: '',
-			  url: '/auth/github',
-  			authorizationEndpoint: 'https://github.com/login/oauth/authorize',
-  			redirectUri: window.location.origin,
-			  optionalUrlParams: ['scope'],
-			  scope: ['user:email'],
-			  scopeDelimiter: ' ',
-			  type: '2.0',
-			  popupOptions: { width: 1020, height: 618 }
-			});
+		$authProvider.github({
+			clientId: '3787c20d580766b56db2',
+			redirectUri: 'http://localhost:3000'
+		})
 
 
-			// $authProvider.twitter({
-			// 	clientId: 'eDKf3suvrzsixugJsm0I9MOMc'
-			//   url: '/auth/twitter',
-			//   authorizationEndpoint: 'https://api.twitter.com/oauth/authenticate',
-			//   redirectUri: window.location.origin,
-			//   type: '1.0',
-			//   popupOptions: { width: 495, height: 645 }
-			// });
 
 		
-});
+})
+	.factory('Github', function($http){
+		
+		var nest = {};
+		var followers = {};
+
+		var submit = function(username){
+ 		
+ 			return $http.get("https://api.github.com/users/" + username)
+ 			.success(function(data){
+ 		 	console.log('Scope.USERNAME: ', username);
+ 				
+ 				nest.name = data.name;
+ 				nest.login = data.login;
+ 				nest.html_url = data.html_url;
+ 				nest.avatar_url = data.avatar_url;
+ 				
+		 		return $http.get("https://api.github.com/users/" + username + '/followers')
+ 			    .success(function(res){
+ 				    followers.list = res;
+ 				    console.log('followers, ', followers);
+ 				});
+ 			});
+		 };	
+
+		 return {
+		 	nest: nest,
+		 	followers: followers,
+		 	submit: submit
+		 }		
+	})
+
 
 

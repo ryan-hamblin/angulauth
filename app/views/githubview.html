@@ -1,11 +1,16 @@
 <div ng-controller='GithubCtrl'>
-		<h1>{{ userData.name }} </h1>
-		<h3><a href="{{userData.html_url}}">{{ userData.login }}</a></h3>
-		<img src="{{userData.avatar_url}}"/>
+<div ng-bind='nest.name'>
+	
+</div>
+		<h1 ng-model='nest.name'>{{ nest.name }}</h1>
+		<p>{{ nest.data }}
+		<h3><a href="{{ nest.html_url }}">{{ nest.login }}</a></h3>
+		<img src="{{ nest.avatar_url }}"/>
 		<br>
 		<br>
-	<!-- 	<div ng-repeat='follower in followers'>
+		<hr>
+		<div ng-repeat='follower in followers.list'>
 		 <img src="{{ follower.avatar_url }}"/>
 		<h3><a href="{{follower.html_url}}">{{ follower.login }}</a></h3>
-		</div> -->
+		</div>
 </div>
