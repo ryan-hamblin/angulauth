@@ -91,5 +91,10 @@ angular.module('angulauthApp', [
 		 }		
 	})
 
+	.factory('Twitter', function($http){
+
+		
+	});
+
 
 

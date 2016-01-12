@@ -1,14 +1,15 @@
 <div class="jumbotron">
-  <h1>Angulauth</h1>
+  <h1>Scope Cutter</h1>
   <p class="lead">
     
     Login using one of the following accounts:
   </p>
   <form>
   <!-- Authenticate these states and only allow access after user is Authorized -->
-   <!--  <div ng-controller='TwitterCtrl'><a href='#/twittview' class='btn btn-default fa fa-twitter' ng-click="authenticate('twitter')">Twitter</a></div> -->
+    <!-- <input type='text' ng-model='twitterHandle' placeholder='twitter handle'/>
+    <div ng-controller='TwitterCtrl'><a href='#/twittview' class='btn btn-default fa fa-twitter' ng-click="authenticate('twitter')">Twitter</a></div> -->
     <div name='loginForm'>
-    <input type='text' ng-model='username'/>
+    <input type='text' ng-model='username' placeholder='github handle'/>
     <div ng-controller='GithubCtrl'><a href='#/github' class='btn btn-default fa fa-github' ng-click="submit()">GitHub</a></div>
   <!--   <div ng-controller='FbCtrl'><a href='#/fbview' class='btn btn-default fa fa-facebook'>Facebook</a></div> -->
   </form>
