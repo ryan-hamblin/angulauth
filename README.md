@@ -1,5 +1,5 @@
 # angulauth
-
+-- This was a solo project I did while at MakerSquare. I had 36 hours to complete the project.
 This project uses. Angular, Grunt, And the GitHub API. 
 
 ## Build & development
