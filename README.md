@@ -1,4 +1,4 @@
-# angulauth
+# Angulauth
 ### This was a solo project I did while at MakerSquare. I had 36 hours to complete the project.
 This project uses. Angular, Grunt, And the GitHub API. I also used Yeoman to get a catapult on the project.
 
